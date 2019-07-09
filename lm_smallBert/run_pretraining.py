@@ -80,7 +80,7 @@ def create_masked_lm_predictions(tokens, masked_lm_prob, max_predictions_per_seq
 def create_examples(data_path, max_seq_length, masked_lm_prob, max_predictions_per_seq, vocab_list):
     """Creates examples for the training and dev sets."""
     examples = []
-    max_num_tokens = max_seq_length - 3
+    max_num_tokens = max_seq_length - 2
     fr = open(data_path, "r")
     for (i, line) in tqdm(enumerate(fr), desc="Creating Example"):
         tokens_a = line.strip("\n").split()[:max_num_tokens]
